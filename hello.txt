@@ -1,21 +1,14 @@
-hello
-def is_palindrome(input_string):
-    # Convert input string to lowercase and remove spaces
-    input_string = input_string.lower().replace(" ", "")
-    
-    # Check if the reversed string is the same as the original string
-    return input_string == input_string[::-1]
-
-# Example usage
-word = "race car"
-result = is_palindrome(word)
-
-if result:
-    print(f"'{word}' is a palindrome.")
-else:
-    print(f"'{word}' is not a palindrome.")
-
-m
-m
-m
-m
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          </div>
+        </div>
+      </nav>
