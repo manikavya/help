@@ -1,1 +1,136 @@
-testing
+functional testing -  Functional testing focuses on verifying that the software functions as expected according to the requirements or specifications
+Example: For a login functionality:
+
+Test Case 1: Input correct username and password → Expected Result: Successful login.
+Test Case 2: Input incorrect username or password → Expected Result: Error message.
+Test Case 3: Leave username or password blank → Expected Result: Error indicating required fields.
+Regression testing: Performed to ensure that recent code changes does not effect the existing functionality.
+Example: Suppose a bug fix was applied to the shopping cart feature of an e-commerce application:
+
+Test Case 1: Add items to the cart → Ensure items are added correctly as before.
+Test Case 2: Check out items → Confirm the checkout process still works.
+Test Case 3: Apply the bug fix scenario → Validate the issue is resolved without affecting other parts of the cart.
+Sanity Testing: It is done after a minor change fix in the build
+Black Box Testing: Focuses on testing the application's functionality without knowing its internal code structure.
+White Box Testing: Tests internal structures or workings of an application.
+Boundary Vlaue Analysis Testing (BVA): Testing at boundary levels. example: inout range is 16 to 65 then if we enter 15 it should get invalid
+Equivalence Partitioning (EP) Testing: Divides input into partitions (valid/invalid) for efficiency.example: ramge is 18 to 50 , less than 18 should be invalid, greater than 50 is invalid , inbetween is valid
+Both Boundary Value Analysis and Equivalence Partitioning are essential test design techniques that enhance the effectiveness of testing by focusing on critical input values and reducing redundancy in test cases. By utilizing these techniques, testers can uncover defects that may be present at the edges of input ranges and ensure that the application behaves correctly across valid and invalid scenarios.  
+
+2.Explain STLC : 
+  The Software Testing Life Cycle (STLC) is a structured approach to testing software to ensure that it meets specified requirements and functions correctly.
+Phases of STLC:
+
+Requirement Analysis: understand the requirements, 
+Test Planning:  test scope, objectives, and deliverables,  Estimate the resources and time required. identify test tools, risk analysis, and mitigation plans.Define roles and responsibilities.
+ 
+Test Case Development:  Create detailed test cases and scripts based on the requirements  
+Test Environment Setup:  Set up hardware and software configurations.  
+Test Execution:Execute test cases according to the test plan.Log defects in the defect management tool. Retest fixed defects and perform regression testing.
+Test Closure: Evaluate test completion criteria based on coverage, quality, time, cost, and critical business objectives.
+Test Case: Describes individual test scenarios in detail.
+Test Suite: Groups test cases for systematic execution.
+Test Plan: Guides the overall testing process, including strategy, scope, and resources.
+
+3.Explain Bug Life Cycle ?
+  The Bug Life Cycle (or Defect Life Cycle) describes the stages a software bug goes through from its identification to its resolution
+Example Workflow Summary
+
+Tester finds a crash on the “Submit” button → New.
+Bug assigned to a developer → Assigned.
+Developer confirms issue, starts working on it → Open.
+Developer fixes the crash → Fixed.
+Tester retests and verifies the fix → Retest → Verified.
+Project manager or tester marks it as resolved → Closed.
+
+  4.What is the difference between a bug and defect? 
+Defect Example: During the design phase, the requirement is misunderstood, and the system is designed to apply the discount to orders over $150 instead. This mistake is a defect in the design, as it does not meet the original requirement.
+Bug Example: If the code was implemented correctly to apply a discount on orders over $100, but due to a coding error, the application crashes whenever a discount is applied, this would be considered a bug.
+
+5.What is severity and priority? 
+1. Severity:
+
+Definition: Severity refers to the impact a defect has on the application's functionality. It is assigned based on the bug's potential to affect the application’s operations.
+Who sets it: Generally assigned by testers.
+Severity Levels:
+
+Critical: The defect causes a complete system failure, blocking usage.
+High: Major functionality is affected, but some parts of the system are still usable.
+Medium: Affects less critical functionality, with workarounds available.
+Low: Minor issues or cosmetic problems, with minimal functional impact.
+Example:
+
+Critical Severity: A banking application crashes when the user submits a transaction.
+Low Severity: Minor text misalignment on a rarely used page
+2. Priority:
+
+Definition: Priority indicates how urgently a defect needs to be fixed. This is determined based on business needs, user impact, and timelines.
+Who sets it: Typically set by project managers or product owners.
+Priority Levels:
+
+High Priority: Needs immediate attention; should be fixed before other issues.
+Medium Priority: Important but can be scheduled after higher-priority issues.
+Low Priority: Can be fixed at a later stage.
+Example:
+
+High Priority: A login page for a popular e-commerce website fails, stopping users from accessing their accounts.
+Low Priority: A minor font color issue on the account settings page.
+Combined Example:
+
+High Severity & High Priority: An online payment system crashes upon submitting a payment (urgent, core functionality).
+High Severity & Low Priority: A rarely used report crashes; still critical, but can wait for a fix.
+Low Severity & High Priority: A frequently visible typo on the homepage; needs quick correction due to visibility.
+Low Severity & Low Priority: A minor UI misalignment on a less visited settings page.
+These distinctions help teams organize and prioritize bug-fixing efforts more efficiently
+
+7.What are the differences between smoke and sanity testing? 
+1. Smoke Testing
+
+Purpose: Smoke testing is an initial check to verify if the most crucial functions of the software work properly and if the build is stable enough for further testing.
+Scope: It covers broad and high-level testing of the application, often focusing on the main components without going into detail.
+When It’s Performed: Typically done on a new build to ensure no major issues prevent further testing.
+Objective: To determine if the build is stable enough to proceed with more extensive testing.
+Example: Suppose you’re testing an e-commerce website:
+
+You’d check if the site opens, if users can log in, if the product catalog displays, and if the cart function is working.
+If these core functionalities pass, the build is "smoke-tested" and considered stable enough for more detailed testing.
+2. Sanity Testing
+
+Purpose: Sanity testing is a focused, narrow regression test on particular areas where code changes or bug fixes were made, ensuring that these specific functions work as expected.
+Scope: More targeted than smoke testing, focusing only on specific areas affected by recent changes or fixes.
+When It’s Performed: Typically done after receiving a build with minor changes or bug fixes, to ensure the intended fixes work and have not introduced new issues.
+Objective: To confirm that recent changes have been implemented correctly and that the bug fixes work as expected.
+Example: Continuing with the e-commerce website:
+
+If there was a recent bug fix for the "Add to Cart" feature, you would perform sanity testing only on the "Add to Cart" functionality and related areas to ensure the bug is resolved.
+If this area works as expected, you conclude that the fix is successful without needing to test the entire application.
+
+8.What are the difference between regression and re-testing?
+1. Regression Testing
+
+Purpose: The goal of regression testing is to confirm that recent code changes (e.g., new features, bug fixes, or enhancements) have not negatively impacted the existing, previously working parts of the software.
+Scope: It covers both the areas of the code that were changed and the related functionalities that might be indirectly affected.
+When It’s Performed: Performed after code modifications, often as part of a regular testing cycle whenever new code is integrated.
+Objective: To ensure that new changes don’t break existing functionality.
+Example: Suppose an e-commerce application’s development team has added a feature allowing users to save items for later. Regression testing would check not only the new "Save for Later" feature but also other core functionalities like "Add to Cart" and "Checkout" to make sure they still work correctly.
+
+2. Re-testing
+
+Purpose: Re-testing focuses solely on verifying that a specific defect, previously reported as a bug, has been successfully fixed.
+Scope: It is limited only to the specific area where the defect was found and doesn’t cover related functionalities.
+When It’s Performed: Performed only after a defect has been fixed, and it’s typically an isolated test focusing solely on that particular defect.
+Objective: To confirm that the specific issue is resolved and that the bug no longer exists.
+Example: If there was a bug in the e-commerce application where the "Add to Cart" button did not work on mobile devices, once the development team fixes this issue, re-testing would be performed on the "Add to Cart" button functionality to ensure that it now works as expected on mobile devices.
+
+
+
+
+
+
+
+
+
+
+  
+
+
