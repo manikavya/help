@@ -123,13 +123,54 @@ Objective: To confirm that the specific issue is resolved and that the bug no lo
 Example: If there was a bug in the e-commerce application where the "Add to Cart" button did not work on mobile devices, once the development team fixes this issue, re-testing would be performed on the "Add to Cart" button functionality to ensure that it now works as expected on mobile devices.
 
 9.What is system testing? 
+System testing is a crucial phase in the software development lifecycle where the complete and integrated software system is tested to ensure it meets the specified requirements. 
+This type of testing is performed after integration testing and before acceptance testing
+example: Functional Testing, Performance Testing, Usability Testing, Security Testing,Interface Testing
+
 10.What is integration testing? 
+Integration testing is a type of software testing where individual units or components of a software application are combined and tested as a group. 
+The primary goal is to identify defects in the interactions between integrated components.
+
+
 11.What are differences between test scenario and test case? 
+Test Scenario
+A test scenario is a high-level description of what needs to be tested. It focuses on the overall functionality and user journeys within the application. 
+Test scenarios help ensure that all aspects of the application are covered during testing.
+Test Case
+A test case is a detailed set of actions, conditions, and expected results used to verify a specific feature or functionality of the application. 
+Test cases are derived from test scenarios and provide step-by-step instructions on how to perform the test.
+
 12.What are the differences between test plan and test strategy? 
-13.Write test cases for pen 14.Write test cases for calculator 
+Testplan: A test plan is a detailed document that outlines the scope, approach, resources, and schedule of intended testing activities. 
+It is specific to a particular project and provides a roadmap for how testing will be conducted
+Test Strategy
+A test strategy is a high-level document that outlines the general approach and principles for testing across the organization. 
+It provides a framework for all testing activities and ensures consistency in testing practices.
+
+
+13.Write test cases for pen 
+14.Write test cases for calculator 
 15.Write test cases for calendar 
-16.What is RTM? 17.What is agile methodology?Explain it. 
+16.What is RTM?
+In the context of software testing, RTM stands for Requirements Traceability Matrix. It is a document that helps ensure that all the requirements of a project are covered by test cases. 
+The RTM is used to trace the requirements throughout the lifecycle of the project, from the initial stages of development to the final stages of testing
+Importance of RTM
+Ensures Complete Coverage: RTM helps in ensuring that all requirements are covered by test cases, reducing the risk of missing any functionality.
+Tracks Progress: It provides a clear view of the testing progress and the status of each requirement.
+Facilitates Impact Analysis: RTM helps in understanding the impact of changes in requirements on the test cases and vice versa.
+Improves Communication: It serves as a communication tool between the development, testing, and business teams, ensuring everyone is on the same page.
+
+
+17.What is agile methodology?Explain it. 
+The Agile methodology is an iterative and flexible approach to project management and software development. It emphasizes collaboration, customer feedback, and small, rapid releases of functional software. 
+Agile methodologies are designed to adapt to changing requirements and deliver value incrementally.
+more questions on agile methodoligy : https://www.koenig-solutions.com/blog/scrum-master-interview-questions?keyword=&device=c&utm_source=google&utm_medium=cpc&utm_device=c&utm_campaign=P-Max-Course-adgroup-&gad_source=1&gclid=EAIaIQobChMI3Lb4hKPMiQMV44BLBR0ZrBx1EAAYASAAEgIDjvD_BwE
+Story points : Story Point = 4-6 hours 2 Story Points = 10-12 hours 3 Story Points = 15-20 hours 
+
 18.How is agile better than waterfall model? 
+Agile Approach: The team works in short sprints, delivering a new feature every few weeks. Customers provide feedback after each sprint, allowing the team to make adjustments and improvements continuously.
+Waterfall Approach: The team spends several months gathering all requirements, then moves through design, development, and testing phases sequentially. The app is delivered only after all phases are complete, with limited opportunities for customer feedback during development.
+
 19.What is scrum? 
 20.What is sprint?
 Explain the sprint cycle in your project? 
