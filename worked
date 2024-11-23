@@ -1,0 +1,16 @@
+worked code 
+describe('Amphora Website Test', () => {
+  it('Search for Amphora CTRM and verify website', () => {
+    // Visit Google
+    cy.visit('https://www.google.com');
+    
+    // Search for "Amphora CTRM"
+    cy.get('[name="q"]').type('Amphora ctrm {enter}');
+    
+    // Click the link to go to the Amphora website
+    cy.contains('Amphora CTRM').click();
+    
+    // Assert that the Amphora website is loaded
+    cy.url().should('include', 'https://amphora.net/'); // Update with the actual Amphora domain if needed
+    cy.wait(100000);
+  });
