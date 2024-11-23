@@ -1,1 +1,41 @@
-created a new file
+describe('Amphora Website Test', () => {
+  it('Search for Amphora CTRM and verify website', () => {
+    // Visit Google
+    cy.visit('https://www.google.com');
+    
+    // Search for "Amphora CTRM"
+    cy.get('[name="q"]').type('Amphora CTRM{enter}');
+    
+    // Click the link to go to the Amphora website
+    cy.contains('Amphora CTRM').click();
+    
+    // Assert that the Amphora website is loaded
+    cy.url().should('include', 'amphora.net'); // Update with the actual Amphora domain if needed
+  });
+
+  it('Navigate through Products dropdown and make assertions', () => {
+    // Open the Products dropdown
+    cy.get('.products-dropdown-selector').trigger('mouseover'); // Update selector if necessary
+
+    // Iterate over the products and make assertions
+    const products = ['Product 1', 'Product 2', 'Product 3']; // Replace with actual product names
+    products.forEach((product) => {
+      cy.contains(product).click();
+      cy.url().should('include', product.toLowerCase().replace(' ', '-')); // Assert the URL changes
+      cy.get('h1').should('contain.text', product); // Assert the product page header
+    });
+  });
+
+  it('Sign up for the newsletter and verify confirmation message', () => {
+    // Open Resources dropdown and navigate to the newsletter signup page
+    cy.get('.resources-dropdown-selector').trigger('mouseover'); // Update selector if necessary
+    cy.contains('Newsletter').click(); // Update text if needed
+
+    // Fill out the newsletter signup form
+    cy.get('#email').type('test@example.com'); // Replace with the actual email field selector
+    cy.get('#submit-button').click(); // Replace with the actual submit button selector
+
+    // Assert the confirmation message
+    cy.contains('Thank you for signing up for our newsletter').should('be.visible');
+  });
+});
