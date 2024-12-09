@@ -1,9 +1,19 @@
 types of web UI testing
-1. functional testing - 
-2.graphic user interface testing 
-3. security testing 
-4. database testing 
-5. compatability testing 
-6. performance testing 
-7. usability testing
-8. crowd testing 
+1. functional testing - is website developed according to the functional req .Activities like - URL/ link , form testing/ input testing, end to end functional testing
+2.graphic user interface testing - CSS components like test fields, size like that
+3. security testing - mostly used for banking websites, autentication 
+4. database testing - ensures data appeared according to the requirement
+5. compatability testing - different browsers like chrome, edge 
+6. performance testing - checking at peak and non peak load of data 
+7. usability testing- user feedback 
+8. crowd testing - with lots users over the years to get the feedback 
+--------------------------------------------------------------------------------
+Functional Testing:
+Types: 
+Unit testing- done by developers 
+smoke testing- testing done after each build is released in order to ensure build stability 
+sanity testing - 
+regression testing- adding a new code doesnot effect the existing functionality - eg: added payment module which doesnot effect the cart module 
+Integration testing- modules might work individually but after integration also the expected outcome should be there
+user acceptance testing- after releasing to the production user feedback 
+
