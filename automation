@@ -5,3 +5,10 @@ ID: driver.find_element(By.ID,"Form_submitForm_EmailHomePage").send_keys("hello"
 Name: driver.find_element(By.NAME,"Form_submitForm_EmailHomePage").send_keys("hello")
 Link text: driver.find_element(By.LINK_TEXT,"Form_submitForm_EmailHomePage").click()
 XPath: driver.find_element(By.XPATH,"//div[@class='action btn btn-ohrm btn-tryit-free']").click()
+
+
+2. selenium webdriver: it is a tool automating webbrowsers. It provides an interface for controlling the web browsers automatically.
+
+3. types if waits in Selenium: 
+    a. implicit wait: wait before throwing an exception if an element is not found.
+    b. explicit wait: wait until for a specific condition to be happen like clickable, element to be visible. mostly helpful for dynamic web pages 
