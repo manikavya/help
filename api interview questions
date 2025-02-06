@@ -1,0 +1,54 @@
+Java + Selenuim + BDD (Cucumber)
+
+
+Java topics —> string , Collections (lists, maps), OOPS, exceptions  Framework related questions
+
+Selenium ->
+1. Locators strategy’s  , xpath vs css, findElement vs FindElements
+2. Dynamic Xpath’s
+3. Common exceptions
+4. Waits
+5. Threads concepts.
+
+Tests to be automated and non automated.
+
+BDD (Cucumber)
+1. Importance of BDD
+2. BDD vs TDD
+3. Scenario, Feature file, step definition, Given, When, Then, 
+4. Tables, handling multiple data at a. Time
+5. Scope Bindings
+
+
+Framework 
+TDD, BDD, KDD
+POM -> 
+TestNG -> importance of it, benefits
+
+CICD process
+
+CI CD tool -> Jenkins Automation tests running
+
+Design Patterns, SOLID principles —> Framework level.
+Types of testing  -> Smoke, regression, retest, Sanity 
+Levels of testing
+Test Pyramid
+
+
+Manual Testing
+1. Test Case scnearions -> important things to be covered.
+2. Functionality related diff types of tests you can cover
+3. Levels of testing.
+4. Test Plan vs Test Strategy 
+
+
+API Testing
+
+1. Process to be followed, Authorization, Json conversions Endpoints, used HttpClient, Model class
+2. Diff b/w Put vs Patch vs Post vs Delete vs Update
+3. Any Tools used for API testing
+
+Agile Framework
+1. Different ceremonies 
+2. Sprint
+3. Scrum
