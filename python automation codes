@@ -1,0 +1,287 @@
+rightclick 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+ser_obj = Service("/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get("https://www.w3schools.com/")
+driver.maximize_window()
+
+#click on search box
+box = driver.find_element(By.XPATH, "//*[@id='tnb-google-search-input']")
+actions = ActionChains(driver)
+actions.context_click(box).perform()
+time.sleep(3)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+drag drop 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
+
+ser_obj = Service("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get("https://testautomationpractice.blogspot.com/")
+driver.maximize_window()
+time.sleep(10)
+
+s=driver.find_element(By.ID, 'draggable')
+d=driver.find_element(By.ID,'droppable')
+ActionChains.drag_and_drop(s,d).perform()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+type data press enter 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+#ser_obj = Service("/Driver/chromedriver.exe")
+ser_obj = Service("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get("https://www.w3schools.com/")
+driver.maximize_window()
+box = driver.find_element(By.XPATH, "//*[@id='tnb-google-search-input']")
+box.send_keys("html")
+box.send_keys(Keys.RETURN)
+time.sleep(3)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+drop down 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+import time
+
+ser_obj = Service("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get("https://www.w3schools.com/")
+driver.maximize_window()
+dropdown= driver.find_element(By.XPATH, '//*[@id="navbtn_certified"]')
+dropdown.click()
+time.sleep(3)
+dropdown_click= driver.find_element(By.XPATH,'/html/body/div[2]/div[2]/div/nav[3]/div[1]/div/div[2]/div[1]/div[1]/a[2]')
+dropdown_click.click()
+time.sleep(3)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+file upload 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+import time
+
+ser_obj = Service("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get("https://practice.expandtesting.com/upload")
+driver.maximize_window()
+
+driver.execute_script('window.scroll(0,600)')
+upload= driver.find_element(By.XPATH,'//*[@id="fileInput"]')
+filepath=r'C:\Users\manikavya.mamidi\Downloads\kavya.txt'
+upload.send_keys(filepath)
+submit=driver.find_element(By.XPATH,'//*[@id="fileSubmit"]')
+submit.click()
+time.sleep(3)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+pagination 
+
+import requests
+import logging
+import warnings
+from urllib3.exceptions import InsecureRequestWarning
+
+# Suppress SSL verification warnings
+warnings.simplefilter('ignore', InsecureRequestWarning)
+
+# Setup logging to avoid printing warnings in the console
+logging.basicConfig(level=logging.INFO)
+url = "https://jsonplaceholder.typicode.com/posts"
+page = 1
+per_page = 10
+response = requests.get(url, verify=False)
+print(response.status_code)
+while True:
+    try:
+        response = requests.get(url, params={"_page": page, "_limit": per_page}, verify=False)
+
+        if response.status_code != 200:
+            logging.error(f"Failed to retrieve data. Status code: {response.status_code}")
+            break
+
+        data = response.json()
+
+        # If no data is returned, end pagination
+        if len(data) == 0:
+            logging.info("No more data available.")
+            break
+
+        # Log the data (or do something with it)
+        logging.info(f"Page {page} data: {data}")
+
+        # Check if we retrieved fewer than per_page items, meaning we've reached the last page
+        if len(data) < per_page:
+            logging.info("Reached the last page of data.")
+            break
+
+        page += 1  # Move to the next page
+
+    except requests.exceptions.RequestException as e:
+        logging.error(f"An error occurred: {e}")
+        break
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+multiple browser testing 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+ser_obj = Service("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/multipleWindowsLinks.html")
+driver.maximize_window()
+driver.find_element(By.LINK_TEXT,'click here').click()
+original_window= driver.current_window_handle
+all_windows= driver.window_handles
+print(all_windows)
+for i in all_windows:
+    if i!= original_window:
+        driver.switch_to.window(i)
+        time.sleep(1)
+        searchbar = driver.find_element(By.NAME,'search_query')
+        searchbar.click()
+        searchbar.send_keys("telugu")
+        searchbar.send_keys(Keys.RETURN)
+        time.sleep(3)
+print(original_window)
+
+driver.close()
+time.sleep(3)
+driver.switch_to.window(original_window)
+
+time.sleep(3)
+driver.quit()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+dropdown scroll 
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+ser_obj = Service("C:/Users/manikavya.mamidi/PycharmProjects/pythonProject/Driver/chromedriver.exe")
+driver = webdriver.Chrome(service = ser_obj)
+driver.get('https://practice.expandtesting.com/dropdown')
+driver.maximize_window()
+driver.execute_script('window.scroll(0,600)')
+dropdowns= Select(driver.find_element(By.ID,'country'))
+dropdowns.select_by_value('AI')
+
+time.sleep(3)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+get request 
+import requests
+url="https://api.restful-api.dev/objects"
+response= requests.get(url,verify=False)
+print(response)
+print("status code")
+print(response.status_code)
+print("response.content")
+print(response.content)
+print("response.headers")
+print(response.headers)
+print("response.cookies")
+print(response.cookies)
+print("response.encoding")
+print(response.encoding)
+print("response.elapsed")
+print(response.elapsed)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+get request fetch data
+import requests
+import json
+import jsonpath
+
+url="https://api.restful-api.dev/objects"
+response= requests.get(url, verify=False)
+
+json_response= json.loads(response.text)
+
+#to get complete response in json format
+print(json_response)
+
+#fetching only first name using json path
+names= jsonpath.jsonpath(json_response,'$..name')
+print(names[0])
+
+#fetching the color inside data
+col= jsonpath.jsonpath(json_response,'$..data.color')
+print(col)
+print(col[0])
+
+#compare the printed value
+assert col[0]=='Cloudy White'
+#or by using if
+if col[0]=='Cloudy White':
+    print("equal")
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+delete 
+import requests
+
+url="https://api.restful-api.dev/objects/6"
+
+#by running the above http call, the data with id=6 will get deleted
+response= requests.delete(url, verify=False)
+
+print(response.status_code)
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+post 
+import requests
+import json
+import jsonpath
+
+url="https://api.restful-api.dev/objects"
+
+#add the data in the notepad and save it as .json which you want to post in the api
+with open('C:\\Users\\manikavya.mamidi\\PycharmProjects\\pythonProject\\13_1_data.json','r') as file:
+
+    #save the raw data into json format
+    json_input=file.read()
+    request_json= json.loads(json_input)
+
+#hit post url
+headers = {'Content-Type': 'application/json'}
+response= requests.post(url,json=request_json,headers=headers, verify=False)
+print(response.status_code)
+
+#fetch the data like name, for that first make into json format
+response_json= json.loads(response.text)
+name= jsonpath.jsonpath(response_json,'$..name')
+print(name)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+put 
+import requests
+import json
+import jsonpath
+
+url="https://api.restful-api.dev/objects/7"
+
+with open('C:\\Users\\manikavya.mamidi\\PycharmProjects\\pythonProject\\14_1_data.json','r') as file:
+    # save the raw data into json format
+    json_input=file.read()
+    json_response=json.loads(json_input)
+
+
+headers = {'Content-Type': 'application/json'}
+response= requests.put(url,json=json_response,headers=headers,verify=False)
+print(response.status_code)
+
+
+
+
